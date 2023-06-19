@@ -105,6 +105,29 @@
                     document.getElementById('fileName').value = fileName;
                 });
             </script>
+
+
+            <div class="col-xs-12 col-sm-12 col-md-6 mt-2">
+                <div class="form-group">
+                    <label for="tags">Etiquetas:</label>
+                    <select id="tags" name="tags[]" class="form-control" multiple>
+                        <!-- Opciones de etiquetas preexistentes -->
+                        <option value="Feedback">Feedback</option>
+                        <option value="Incidencia">Incidencia</option>
+                        <option value="Queja">Queja</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <script>
+                $(document).ready(function() {
+                $('#tags').select2({
+                    tags: true,
+                    tokenSeparators: [',', ' '], 
+                });
+            });
+            </script>
             
             
        

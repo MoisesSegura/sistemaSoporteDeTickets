@@ -55,9 +55,23 @@
         </div>
     </div>
 
+    <div class="col-xs-12 col-sm-12 col-md-6 mt-2">
+        <div class="form-group">
+            <strong>Tags:</strong>
+            <input type="text" id="fileName" class="form-control" readonly value="{{$ticket->tag}}">
+        </div>
+    </div>
+
     <div class="col-xs-12 col-sm-12 col-md-12 text-center mt-2">
         <a href="{{route('tickets.index')}}" class="btn btn-primary createAndBack-btn">Volver</a>
     </div>
+
+
+
+  
+    </div>
+
+
 </div>
 
 <style>
