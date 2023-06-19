@@ -42,7 +42,8 @@
     
             <tr>
                 <td class="fw-bold text-black">{{$ticket->id}}</td>
-                <td class="fw-bold text-black">{{$ticket->title}}</td>
+                <td class="fw-bold text-black"><a href="{{route('tickets.edit', $ticket)}}" class="black-link">{{$ticket->title}}</a></td>
+
                 <td>
                     @if($ticket->status == 'Pendiente')
                         <span class="badge bg-warning fs-6 text-black">{{$ticket->status}}</span>
@@ -97,10 +98,14 @@
 }
 
 .logo {
-    width: 50px;
-    height: 50px;
+    width: 3rem;
+    height: 3rem;
     
 }
+
+.black-link {
+        color: black;
+    }
 
 </style>
 

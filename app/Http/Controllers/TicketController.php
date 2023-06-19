@@ -14,7 +14,7 @@ class TicketController extends Controller
      */
     public function index(): view
     {
-        $tickets = Ticket::latest()->paginate(3);
+        $tickets = Ticket::latest()->paginate(5);
 
         return view('index', ['tickets'=> $tickets]);
     }
@@ -53,13 +53,13 @@ class TicketController extends Controller
      */
     public function edit(ticket $ticket)
     {
-        //
+        return view('edit', ['ticket' => $ticket]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, ticket $ticket)
+    public function update(Request $request, ticket $ticket): RedirectResponse
     {
         //
     }

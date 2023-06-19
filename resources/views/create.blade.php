@@ -88,24 +88,27 @@
             <div class="col-xs-12 col-sm-12 col-md-6 mt-2">
                 <div class="form-group">
                     <strong>Archivo adjunto:</strong>
-                    <input type="file" id="fileInput" class="form-control-file" name="attachment" style="display: none;">
-                    <button class="btn btn-primary select-file-btn" onclick="document.getElementById('fileInput').click()">Seleccionar Archivo</button>
-                    <input type="text" id="fileName" class="form-control" readonly>
+                    <div class="input-group">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary select-file-btn" type="button" onclick="document.getElementById('fileInput').click()">Seleccionar Archivo</button>
+                        </div>
+                        <input type="text" id="fileName" class="form-control" name="file" readonly>
+                    </div>
+                    <input type="file" id="fileInput" class="form-control-file" name="file" style="display: none;">
                 </div>
             </div>
-
+            
             <script>
                 // Mostrar el nombre del archivo seleccionado
-                document.getElementById('fileButton').addEventListener('click', function(event) {
-                   event.preventDefault(); // Detener la acción predeterminada del evento de clic en el botón
-                   document.getElementById('fileInput').click();
-               });
-           
-               document.getElementById('fileInput').addEventListener('change', function(event) {
-                   var fileName = event.target.files[0].name;
-                   document.getElementById('fileName').value = fileName;
-               });
-           </script>
+                document.getElementById('fileInput').addEventListener('change', function(event) {
+                    var fileName = event.target.files[0].name;
+                    document.getElementById('fileName').value = fileName;
+                });
+            </script>
+            
+            
+       
+            
             
             <div class="col-xs-12 col-sm-12 col-md-12 text-center mt-2">
                 <button type="submit" class="btn btn-primary createAndBack-btn">Crear</button>
@@ -115,10 +118,14 @@
 
             
         </div>
+
+        
     </form>
 
     
 </div>
+
+
 
 <style>
 
