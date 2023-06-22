@@ -42,7 +42,7 @@ class TicketController extends Controller
         $ticket->description = $request->input('description');
         $ticket->file = $request->input('file');
         
-        // Obtén el valor seleccionado en el campo de etiquetas
+        // el valor seleccionado en el campo de etiquetas
         $tags = $request->input('tags');
         $tagString = implode(',', $tags);
         $ticket->tag = $tagString;
